@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { MBTIType } from "@/utils/mbtiTypes";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import ShareButton from "./ShareButton";
 
 interface ResultsDisplayProps {
   result: MBTIType;
@@ -106,6 +107,8 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result, scores }) => {
               </div>
             </div>
           </div>
+          
+          <ShareButton result={result.code} nickname={result.nickname} />
           
           <div className="flex justify-center pt-6">
             <Button onClick={() => navigate("/test")} className="px-8 py-2">
